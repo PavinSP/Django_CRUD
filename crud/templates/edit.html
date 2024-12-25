@@ -14,19 +14,19 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-md">
-        <a class="navbar-brand" href="/">CRUD Mini Project</a>
+        <a class="navbar-brand" href="/">CRUD Mini Project UPDATE</a>
       </div>
     </nav>
 
     <div class="container mt-5">
       <div class="row">
         <div class="col-md-4">
-          <h2 class="text-white bg-dark text-center p-3">
-            Insert Student Details
+          <h2 class="text-white bg-info text-center p-3">
+            Update Student Details
           </h2>
           <br />
 
-          <form action="/insert" method="POST">
+          <form action="/update/{{d.id}}" method="POST">
             {% csrf_token %}
             <div class="form-group">
               <input
@@ -34,6 +34,7 @@
                 class="form-control"
                 placeholder="Enter the Student Name"
                 name="name"
+                value="{{d.name}}"
                 required
               />
             </div>
@@ -43,6 +44,7 @@
                 class="form-control mt-2"
                 placeholder="Enter the Student Email"
                 name="email"
+                value="{{d.email}}"
                 required
               />
             </div>
@@ -52,6 +54,7 @@
                 class="form-control mt-2"
                 placeholder="Enter the Student Age"
                 name="age"
+                value="{{d.age}}"
                 required
               />
 
@@ -60,9 +63,10 @@
                   id="gender"
                   class="form-control mt-2"
                   name="gender"
+                  value="{{d.gender}}"
                   required
                 >
-                  <option selected>Select Gender</option>
+                  <option selected>{{d.gender}}</option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                   <option value="others">Others</option>
@@ -71,49 +75,12 @@
             </div>
 
             <div class="d-grid gap-2">
-              <button class="btn btn-success mt-2" type="submit">Submit</button>
+              <button class="btn btn-success mt-2" type="submit">Update</button>
             </div>
           </form>
         </div>
 
-        <div class="col-md-8">
-
-          <h2 class="text-center text-white bg-dark p-3">Student Details</h2>
-          {% for message in messages %}
-          <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
-            <strong>{{message}}</strong> 
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
-          {% endfor %}
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email Address</th>
-                <th scope="col">Age</th>
-                <th scope="col">Gender</th>
-                <th scope="col">Edit</th>
-                <th scope="col">Delete</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for d in data %}
-              <tr>
-                <th scope="row">{{d.id}}</th>
-                <td>{{d.name}}</td>
-                <td>{{d.email}}</td>
-                <td>{{d.age}}</td>
-                <td>{{d.gender}}</td>
-                <td><a type="button" href="/update/{{d.id}}"class="btn btn-primary">Edit</a>
-                </td>
-                <td><a type="button" href="/delete/{{d.id}}"class="btn btn-danger">Delete</a>
-                </td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        </div>
+        
       </div>
     </div>
 

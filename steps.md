@@ -1,3 +1,5 @@
+# REFER TO THIS LINK FOR THE STEPS TO FOLLOW: https://www.youtube.com/watch?v=Ko5KLX2n334
+
 # Step 1: Create a virtual environment
 ## Steps to create a virtual environment:
 1) Create a virtual environment
@@ -7,13 +9,25 @@
 # Step 2: Create and host the Django project
 ## Steps to create and host the Django project:
 1) Install Django
-    - pip install django
+
+    ```
+    pip install django
+    ```
 2) Create a Django project
-    -  django-admin startproject mysite
+
+    ```
+    django-admin startproject mysite
+    ```
 3) Navigate to the project directory
-    - cd mysite
+
+    ```
+    cd mysite
+    ```
 4) Start the development server
-    - python manage.py runserver
+
+    ```
+    python manage.py runserver
+    ```
 7) Open your web browser and navigate to http://localhost:8000
 # Step 3: Create an application in the project
 ## Steps to create an application in the project:
@@ -28,3 +42,13 @@
 - Whenver you are in the home page of the local host, you redirect the path to index.html
     - In the urls.py of the crud folder, add a path that redirects to the urls.py of the application
 - In the views.py, define a function to render the request to the index.html 
+# Step 6: Add about.html
+- Perform the last two steps from Step 6 for the html file about.html
+# Step 7: Add the layout of the getbootstrap.com in the index.html
+# Step 8: Modify the index.html
+- Add navbar
+- Add insert student details component
+- Do the same to insert email and age
+# Step 9: Dropdown for selecting gender and Submit button
+# Step 10: Get the data(name, email, age and gender) with the help of insertData function
+# Step 11: Create a database to store the data (in models.py)
